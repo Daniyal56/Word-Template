@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+
+{% block body %} 
+
+<div class="card text-center">
+  <div class="card-header">
+  <b> Garibsons Pvt. Ltd </b>
+  </div>
+  <div class="card-body">
+
+    <h5 class="card-title">Export Documentation</h5>
+    <p class="card-text">Enter Invoice No.</p>
+       
+<form action="" method="post" enctype=multipart/form-data>
+   
+   <input type="text" placeholder='Invoice No.' name='invoice'>
+   <p>
+    <br></br>
+      <input type=file name=file>
+      <input type=submit>
+      <br></br>
+</form>
+<div class="card-footer text-muted">
+<p id="time"></p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+var timestamp = '<?=time();?>';
+function updateTime(){
+  $('#time').html(Date(timestamp));
+  timestamp++;
+}
+$(function(){
+  setInterval(updateTime, 1000);
+});
+</script>
+
+  </div>
+</div>
+
+
+
+{% endblock body %}
